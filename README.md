@@ -13,6 +13,7 @@ If you want a more complicated setup, see [Alternatives](#alternatives).
 Docker for Mac.
 1. Composer
 1. Drush
+1. Node
 
 # Installation
 

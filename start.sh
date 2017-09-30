@@ -6,6 +6,12 @@ if ! type "composer" &> /dev/null; then
   exit 1
 fi
 
+if ! type "npm" &> /dev/null; then
+  echo "Please install Node and try running the script again"
+  echo "Installation instructions can be found at https://nodejs.org/en/download"
+  exit 1
+fi
+
 if ! type "docker-compose" &> /dev/null; then
   echo "Please install Docker and try running the script again"
   echo "Installation instructions can be found at https://www.docker.com/community-edition"
@@ -35,6 +41,7 @@ if [ ! -d "ame" ]; then
   fi
   cp ame/web/sites/default/default.settings.php ame/web/sites/default/settings.php
   cat settings.php.txt >> ame/web/sites/default/settings.php
+  cd ame/web/modules/contrib/stencil && npm install && cd -
   NEW_INSTALL=1
 fi
 
